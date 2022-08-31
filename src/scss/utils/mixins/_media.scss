@@ -1,0 +1,88 @@
+@mixin media-query (
+  $from: false,
+  $to: false,
+  $and: false,
+  $media-feature: width,
+  $media-type: all,
+  $bp: $breakpoints
+) {
+  $media-query: '';
+
+  $min-width: 0;
+  $max-width: 0;
+
+  // From: this breakpoint (inclusive)
+  @if $from {
+    @if type-of($from) == number {
+      $min-width: $from;
+    } @else {
+      $min-width: map_get($bp, $from)
+    }
+  }
+
+  // Until: that breakpoint (exclusive)
+  @if $to {
+    @if type-of($to) == number {
+      $max-width: $to;
+    } @else {
+      $max-width: map_get($bp, $to)
+    }
+  }
+
+  @if $media-feature {
+    @if $min-width != 0 {
+      $media-query: '#{$media-query} and (min-#{$media-feature}: #{$min-width})';
+    }
+    @if $max-width != 0 {
+      $media-query: '#{$media-query} and (max-#{$media-feature}: #{$max-width})';
+    }
+  }
+
+  @if $and {
+    $media-query: '#{$media-query} and #{$and}';
+  }
+
+  // Remove unnecessary media query prefix 'all and '
+  @if $media-type == all and $media-query != '' {
+    $media-type: '';
+    $media-query: str-slice(unquote($media-query), 6)
+  }
+
+  @media #{$media-type + $media-query} {
+    @content;
+  }
+}
+
+@mixin max-width (
+  $to,
+  $and: false,
+  $media-type: all,
+  $bp: $breakpoints
+) {
+  @include media-query(
+    $to: $to,
+    $and: $and,
+    $media-type: $media-type,
+    $media-feature: width,
+    $bp: $bp
+  ) {
+    @content;
+  }
+}
+
+@mixin min-width (
+  $from,
+  $and: false,
+  $media-type: all,
+  $bp: $breakpoints
+) {
+  @include media-query(
+    $from: $from,
+    $and: $and,
+    $media-type: $media-type,
+    $media-feature: width,
+    $bp: $bp
+  ) {
+    @content;
+  }
+}

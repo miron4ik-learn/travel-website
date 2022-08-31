@@ -1,0 +1,31 @@
+// Section
+
+.section {
+  padding: 4.5rem 0 2.5rem;
+
+  &__title {
+    font-size: var(--h2-font);
+    color: var(--title-color);
+    text-align: center;
+    text-transform: capitalize;
+    margin-bottom: var(--mb-2);
+  }
+}
+
+
+
+// Container
+
+.container {
+  max-width: 968px;
+  margin: 0 var(--mb-1);
+}
+
+
+
+// Grid
+
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}

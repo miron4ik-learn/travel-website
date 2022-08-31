@@ -1,0 +1,269 @@
+// Provides a quick method for targeting border-color on specific sides of a box
+
+@mixin border-color (
+  $t: false,
+  $r: false,
+  $b: false,
+  $l: false
+) {
+  @if $t {
+    border-top-color: $t;
+  }
+
+  @if $r {
+    border-right-color: $r;
+  }
+
+  @if $b {
+    border-bottom-color: $b;
+  }
+
+  @if $l {
+    border-left-color: $l;
+  }
+}
+
+
+
+// Provides a shorthand syntax to add border-radius to both the top-left and top-right of an element
+
+@mixin border-top-radius ($radius) {
+  border-top-left-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+@mixin border-right-radius ($radius) {
+  border-bottom-right-radius: $radius;
+  border-top-right-radius: $radius;
+}
+
+@mixin border-bottom-radius ($radius) {
+  border-bottom-left-radius: $radius;
+  border-bottom-right-radius: $radius;
+}
+
+@mixin border-left-radius ($radius) {
+  border-bottom-left-radius: $radius;
+  border-top-left-radius: $radius;
+}
+
+
+
+// Block-level element of an unknown height and width, centered vertically within his parent
+
+@mixin transform-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin transform-center-ver {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@mixin transform-center-hor {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+
+
+// Center block with a width
+
+@mixin center-block {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+// Create a simple circle figure
+
+@mixin circle ($size, $color: false) {
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  
+  @if $color {
+    background-color: $color;
+  }
+}
+
+
+
+// Provides a quick method for setting an element’s position
+
+@mixin position (
+  $pos: absolute,
+  $t: false,
+  $r: false,
+  $b: false,
+  $l: false,
+  $z: false
+) {
+  position: $pos;
+
+  @if $t {
+    top: $t;
+  }
+
+  @if $r {
+    right: $r;
+  }
+
+  @if $b {
+    bottom: $b;
+  }
+
+  @if $l {
+    left: $l;
+  }
+
+  @if $z {
+    z-index: $z;
+  }
+}
+
+
+
+// Sets the width and height of the element in one statement
+
+@mixin box ($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+
+
+// Set the responsive width of the element in one statement
+
+@mixin responsive-width ($max-width) {
+  max-width: $max-width;
+  width: 100%;
+}
+
+
+
+// Set the container in one statement
+
+@mixin container ($max-width, $padding) {
+  max-width: $max-width;
+  width: 100%;
+  padding: $padding;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+
+
+// This mixin will truncate text, adding an ellipsis to represent overflow
+
+@mixin truncate {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Fix */
+@mixin truncate-multiline ($lines, $line-height) {
+  display: block;
+  height: $lines * $line-height;
+  line-height: $line-height;
+  -webkit-line-clamp: $lines;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+
+
+// Set the pseudo element in one statement
+
+@mixin pseudo ($content: '', $pos: absolute, $display: block) {
+  content: $content;
+  position: $pos;
+  display: $display;
+}
+
+@mixin pseudo-before ($content: '', $pos: absolute, $display: block) {
+  &::before {
+    content: $content;
+    position: $pos;
+    display: $display;
+
+    @content;
+  }
+}
+
+@mixin pseudo-after ($content: '', $pos: absolute, $display: block) {
+  &::after {
+    content: $content;
+    position: $pos;
+    display: $display;
+
+    @content;
+  }
+}
+
+
+
+// Set the overlay in one statement
+
+@mixin overlay ($rgb, $a) {
+  &::after {
+    content: '';
+    width: 100%;
+    height: 100%;
+    background: rgba($rgb, $a);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: z('overlay');
+  }
+}
+
+
+
+// Sets styles for placeholder in input element
+
+@mixin placeholder {
+  &::placeholder { @content; }
+  &:-moz-placeholder { @content; }
+  &::-moz-placeholder { @content; }
+  &:-ms-input-placeholder { @content; }
+  &::-webkit-input-placeholder { @content; }
+}
+
+
+
+// Sets styles fot selection
+
+@mixin selection {
+  ::-moz-selection { @content; }
+  ::selection { @content; }
+}
+
+
+
+// Scale img
+
+@mixin scale-img (
+  $hidden: $img-hidden,
+  $transition: $img-transition,
+  $scale: $img-scale
+) {
+  overflow: $img-hidden;
+  line-height: 0;
+
+  img {
+    transition: $img-transition;
+
+    &:hover {
+      transform: $img-scale;
+    }
+  }
+}
