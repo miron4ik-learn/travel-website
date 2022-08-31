@@ -72,6 +72,24 @@
 
     @include position (absolute, $t: .75rem, $r: 1rem);
   }
+
+  &__dark {
+    @include flex-center-ver;
+    column-gap: 2rem;
+
+    @include position (absolute, $l: 3rem, $b: 4rem);
+
+    color: var(--text-color);
+
+    &__changeBtn {
+      font-size: 1rem;
+      cursor: pointer;
+    }
+
+    &__changeName {
+      font-size: var(--small-font);
+    }
+  }
 }
 
 

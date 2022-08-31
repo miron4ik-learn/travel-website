@@ -135,3 +135,35 @@ const scrollActive = () => {
 
 window.addEventListener('scroll', () => scrollActive())
 scrollActive()
+
+
+
+// Dark Light Theme
+
+const themeBtn = document.getElementById('theme-btn')
+const darkTheme = 'dark-theme',
+      iconTheme = 'ri-sun-line'
+
+const selectedTheme = localStorage.getItem('selected-theme'),
+      selectedIcon  = localStorage.getItem('selected-icon')
+
+const getCurrentTheme = () => {
+  return document.body.classList.contains(darkTheme) ? 'dark' : 'light'
+}
+
+const getCurrentIcon = () => {
+  return themeBtn.classList.contains(iconTheme) ? 'ri-moon-line' : 'ri-sun-line'
+}
+
+if(selectedTheme) {
+  document.body.classList[selectedTheme === 'dark' ? 'add' : 'remove'](darkTheme)
+  themeBtn.classList[selectedIcon === 'ri-moon-line' ? 'add' : 'remove'](iconTheme)
+}
+
+themeBtn.addEventListener('click', () => {
+  document.body.classList.toggle(darkTheme)
+  themeBtn.classList.toggle(iconTheme)
+
+  localStorage.setItem('selected-theme', getCurrentTheme())
+  localStorage.setItem('selected-icon', getCurrentIcon())
+})
