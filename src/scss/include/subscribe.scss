@@ -1,0 +1,35 @@
+// Subscribe
+
+.subscribe {
+  padding: 2.5rem 0;
+  background: var(--secondary-color);
+  color: var(--white-color);
+
+  &__title {
+    color: inherit;
+  }
+
+  &__description {
+    margin-bottom: var(--mb-2-5);
+    text-align: center;
+  }
+
+  &__form {
+    padding: .5rem;
+    background: var(--input-color);
+
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__input {
+    width: 70%;
+    padding-right: .5rem;
+    background: var(--input-color);
+
+    @include placeholder {
+      opacity: 1;
+      color: var(--text-color);
+    }
+  }
+}
