@@ -44,5 +44,8 @@
     "postcss-short": "^5.0.0",
     "sass": "^1.54.5",
     "webpack-stream": "^7.0.0"
+  },
+  "dependencies": {
+    "swiper": "^8.3.2"
   }
 }

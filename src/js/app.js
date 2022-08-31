@@ -1,3 +1,5 @@
+import Swiper, { EffectCoverflow } from 'swiper'
+
 // Show Menu
 
 const navMenu  = document.getElementById('nav-menu'),
@@ -41,3 +43,20 @@ const scrollHeader = () => {
 }
 
 window.addEventListener('scroll', () => scrollHeader())
+
+
+
+// Swiper Discover
+
+const swiperDiscover = new Swiper('.discover__container', {
+  modules: [ EffectCoverflow ],
+  effect: 'coverflow',
+  grabCursor: true,
+  centeredSlides: true,
+  slidesPerView: 'auto',
+  loop: true,
+  spaceBetween: 32,
+  coverflowEffect: {
+    rotate: 0,
+  },
+})

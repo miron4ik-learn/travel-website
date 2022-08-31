@@ -1,0 +1,28 @@
+// Discover
+
+.discover {
+  &__card {
+    position: relative;
+    width: 200px;
+  }
+
+  &__overlay {
+    @include scale-img;
+  }
+
+  &__data {
+    color: var(--white-color);
+    
+    @include position (absolute, $b: 1.5rem, $l: 1rem);
+  }
+
+  &__title {
+    margin-bottom: var(--mb-0-25);
+    font-size: var(--h3-font);
+    color: inherit;
+  }
+
+  &__description {
+    font-size: var(--smaller-font);
+  }
+}

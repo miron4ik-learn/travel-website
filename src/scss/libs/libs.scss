@@ -1,1 +1,10 @@
-// Libs
+// Swiper CSS
+
+@import '~swiper/swiper-bundle.min';
+
+.swiper-3d {
+  .swiper-slide-shadow-left,
+  .swiper-slide-shadow-right {
+    background: none;
+  }
+}
