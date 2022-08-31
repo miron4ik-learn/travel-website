@@ -23,7 +23,7 @@ global.$ = {
   // Plugin gh-pages Option
   ghpages: {
     branch: 'gh-pages',
-    repo: 'https://github.com/miron4ik-learn/shady-rhymes.git',
+    repo: 'https://github.com/miron4ik-learn/travel-website.git',
   },
 
   // Plugin gulp-replace alias
