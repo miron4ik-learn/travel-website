@@ -1,0 +1,24 @@
+// Scroll Up
+
+.scrollup {
+  padding: .5rem;
+  background: var(--primary-color);
+  opacity: .9;
+  transition: .4s;
+  display: flex;
+
+  @include position (fixed, $r: 1rem, $b: -20%, $z: z('tooltip'));
+
+  &:hover {
+    background: var(--alt-color);
+    opacity: 1;
+  }
+
+  &--show {
+    bottom: 5rem;
+  }
+
+  &__icon {
+    color: var(--white-color);
+  }
+}

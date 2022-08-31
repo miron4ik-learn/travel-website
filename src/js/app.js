@@ -31,10 +31,10 @@ navLink.forEach(l => l.addEventListener('click', () => linkAction()))
 
 // Change Background Header
 
-const scrollHeader = () => {
-  const header = document.getElementById('header')
-  const headerClassScroll = 'header--scroll'
+const header = document.getElementById('header')
+const headerClassScroll = 'header--scroll'
 
+const scrollHeader = () => {
   if(window.scrollY >= 200) {
     header.classList.add(headerClassScroll)
   } else {
@@ -90,3 +90,20 @@ const finalVideo = () => {
 
 videoBtn.addEventListener('click', () => playPause())
 videoFile.addEventListener('ended', () => finalVideo())
+
+
+
+// Scroll Up
+
+const scrollTop = document.getElementById('scroll-up')
+const scrollUpClassShow = 'scrollup--show'
+
+const scrollUp = () => {
+  if(window.scrollY >= 560) {
+    scrollTop.classList.add(scrollUpClassShow)
+  } else {
+    scrollTop.classList.remove(scrollUpClassShow)
+  }
+}
+
+window.addEventListener('scroll', () => scrollUp())
