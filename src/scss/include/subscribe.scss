@@ -1,9 +1,12 @@
 // Subscribe
 
 .subscribe {
-  padding: 2.5rem 0;
-  background: var(--secondary-color);
   color: var(--white-color);
+
+  &__bg {
+    padding: 2.5rem 0;
+    background: var(--secondary-color);
+  }
 
   &__title {
     color: inherit;
@@ -30,6 +33,37 @@
     @include placeholder {
       opacity: 1;
       color: var(--text-color);
+    }
+  }
+}
+
+
+
+// Subscribe Media
+
+@include min-width ('medium') {
+  .subscribe {
+    &__form {
+      width: 470px;
+      @include center-block;
+    }
+  }
+}
+
+@include min-width ('laptop') {
+  .subscribe {
+    &__bg {
+      padding: 0;
+      background: none;
+    }
+
+    &__container {
+      background: var(--secondary-color);
+      padding: 3.5rem 0;
+    }
+
+    &__input {
+      padding: 0 .5rem;
     }
   }
 }

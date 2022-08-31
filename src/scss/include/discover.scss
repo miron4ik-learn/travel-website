@@ -26,3 +26,38 @@
     font-size: var(--smaller-font);
   }
 }
+
+
+
+// Discover Media
+
+@include min-width ('laptop') {
+  .discover {
+    &__container {
+      width: 610px;
+      padding-top: 2rem;
+      @include center-block;
+    }
+  }
+}
+
+@include min-width ('large') {
+  .discover {
+    &__card {
+      width: 237px;
+    }
+
+    &__container {
+      width: 700px;
+    }
+    
+    &__data {
+      left: 1.5rem;
+      bottom: 2rem;
+    }
+
+    &__title {
+      font-size: var(--h2-font);
+    }
+  }
+}

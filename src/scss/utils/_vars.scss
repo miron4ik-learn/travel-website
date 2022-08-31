@@ -7,7 +7,11 @@ $z-indexes: (
 
 // Breakpoints
 $breakpoints: (
-  //
+  'small': 340px,
+  'medium': 568px,
+  'laptop': 768px,
+  'large': 1024px,
+  'desktop': 1200px,
 );
 
 // Img Scale

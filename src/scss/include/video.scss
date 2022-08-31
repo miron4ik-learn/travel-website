@@ -23,3 +23,37 @@
     }
   }
 }
+
+
+
+// Video Media
+
+@include max-width ('small') {
+  .video {
+    &__container {
+      padding: 0;
+    }
+  }
+}
+
+@include min-width ('medium') {
+  .video {
+    &__container {
+      display: grid;
+      grid-template-columns: .6fr;
+      justify-content: center;
+    }
+  }
+}
+
+@include min-width ('large') {
+  .video {
+    &__container {
+      grid-template-columns: .7fr;
+    }
+
+    &__description {
+      padding: 0 8rem;
+    }
+  }
+}

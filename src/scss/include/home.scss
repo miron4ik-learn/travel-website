@@ -73,3 +73,73 @@
     }
   }
 }
+
+
+
+// Home Media
+
+@include max-width ('small') {
+  .home {
+    &__info {
+      width: 190px;
+      padding: 1rem;
+    }
+  }
+}
+
+@include min-width ('laptop') {
+  .home {
+    &__container {
+      // height: 100vh;
+      grid-template-rows: 1.8fr .5fr;
+    }
+
+    &__data {
+      align-self: flex-end;
+    }
+
+    &__social {
+      margin-bottom: 3rem;
+      flex-direction: row;
+      align-self: flex-end;
+      column-gap: 2.5rem;
+    }
+
+    &__info {
+      bottom: 3rem;
+    }
+  }
+}
+
+
+
+@include min-width ('large') {
+  .home {
+    &__container {
+      grid-template-rows: 2fr .5fr;
+    }
+
+    &__info {
+      width: 328px;
+      grid-template-columns: 1fr 2fr;
+      column-gap: 2rem;
+
+      &__title {
+        font-size: var(--normal-font);
+      }
+
+      &__img {
+        width: 240px;
+      }
+    }
+  }
+}
+
+@include media-query ($from: 721px, $media-feature: height) {
+  .home {
+    &__container,
+    &__img {
+      height: 640px;
+    }
+  }
+}

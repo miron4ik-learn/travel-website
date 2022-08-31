@@ -94,6 +94,36 @@
 
 
 
+// Header Media
+
+@include min-width ('laptop') {
+  .header {
+    &--scroll .nav {
+      &__link {
+        color: var(--text-color);
+
+        &:hover {
+          color: var(--text-color);
+        }
+
+        &--active {
+          color: var(--title-color);
+
+          &::before {
+            background: var(--title-color);
+          }
+        }
+      }
+
+      &__dark__changeBtn {
+        color: var(--text-color);
+      }
+    }
+  }
+}
+
+
+
 // Nav Media
 
 @include max-width (767px) {
@@ -111,6 +141,49 @@
       &--show {
         right: 0;
       }
+    }
+  }
+}
+
+@include min-width ('laptop') {
+  .nav {
+    height: calc(var(--header-height) + 1.5rem);
+
+    &__link {
+      text-transform: capitalize;
+      color: var(--white-color);
+
+      &:hover {
+        color: var(--white-color);
+      }
+
+      &--active::before {
+        background: var(--white-color);
+      }
+    }
+
+    &__dark {
+      position: initial;
+    }
+
+    &__menu {
+      display: flex;
+      column-gap: 1rem;
+    }
+
+    &__list {
+      flex-direction: row;
+      column-gap: 4rem;
+    }
+
+    &__open,
+    &__close,
+    &__dark__changeName {
+      display: none;
+    }
+
+    &__dark__changeBtn {
+      color: var(--white-color);
     }
   }
 }

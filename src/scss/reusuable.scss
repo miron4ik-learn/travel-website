@@ -14,11 +14,37 @@
 
 
 
+// Section Media
+
+@include min-width ('laptop') {
+  .section {
+    padding: 7rem 0 2rem;
+  }
+}
+
+
+
 // Container
 
 .container {
   max-width: 968px;
   margin: 0 var(--mb-1);
+}
+
+
+
+// Container Media
+
+@include min-width ('large') {
+  .container {
+    @include center-block;
+  }
+}
+
+@include min-width ('desktop') {
+  .container {
+    max-width: 1024px;
+  }
 }
 
 

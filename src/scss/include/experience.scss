@@ -44,3 +44,65 @@
     }
   }
 }
+
+
+
+// Experience Media
+
+@include max-width ('small') {
+  .experience {
+    &__content {
+      padding: 0;
+    }
+
+    &__overlay {
+      &:nth-child(1) {
+        width: 190px;
+      }
+
+      &:nth-child(2) {
+        width: 80px;
+      }
+    }
+
+    &__img {
+      padding: 0;
+    }
+  }
+}
+
+@include min-width ('laptop') {
+  .experience {
+    &__overlay {
+      &:nth-child(1) {
+        width: 363px;
+        margin-left: 4rem;
+      }
+
+      &:nth-child(2) {
+        width: 160px;
+      }
+    }
+  }
+}
+
+@include min-width ('large') {
+  .experience {
+    &__content {
+      margin: var(--mb-1) 0;
+      column-gap: 3.5rem;
+    }
+
+    &__overlay {
+      &:nth-child(1) {
+        width: 463px;
+        margin-left: 7rem;
+      }
+
+      &:nth-child(2) {
+        width: 220px;
+        top: 3rem;
+      }
+    }
+  }
+}

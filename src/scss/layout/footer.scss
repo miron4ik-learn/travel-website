@@ -56,3 +56,24 @@
     }
   }
 }
+
+
+
+// Footer Media
+
+@include min-width ('laptop') {
+  .footer {
+    &__rights {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+}
+
+@include min-width ('large') {
+  .footer {
+    &__content {
+      justify-items: center;
+    }
+  }
+}

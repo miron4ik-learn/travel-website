@@ -66,3 +66,45 @@
     @include position (absolute, $r: 0, $b: 0);
   }
 }
+
+
+
+// Place Media
+
+@include max-width ('small') {
+  .place {
+    &__container {
+      grid-template-columns: max-content;
+      justify-content: center;
+    }
+  }
+}
+
+@include min-width ('medium') {
+  .place {
+    &__container {
+      grid-template-columns: repeat(3, max-content);
+    }
+  }
+}
+
+@include min-width ('laptop') {
+  .place {
+    &__container {
+      padding-top: 2rem;
+    }
+  }
+}
+
+@include min-width ('large') {
+  .place {
+    &__container {
+      gap: 3rem 2rem;
+    }
+
+    &__card,
+    &__img {
+      height: 263px;
+    }
+  }
+}

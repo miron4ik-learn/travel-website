@@ -30,3 +30,43 @@
     }
   }
 }
+
+
+
+// About Media
+
+@include min-width ('laptop') {
+  .about {
+    &__container {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+    }
+
+    &__data,
+    &__title {
+      text-align: initial;
+    }
+
+    &__title {
+      margin-bottom: var(--mb-1-5);
+    }
+
+    &__description {
+      margin-bottom: var(--mb-2);
+    }
+  }
+}
+
+@include min-width ('large') {
+  .about {
+    &__img {
+      &__one {
+        width: 240px;
+      }
+
+      &__two {
+        width: 290px;
+      }
+    }
+  }
+}
