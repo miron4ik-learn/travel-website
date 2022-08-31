@@ -1,0 +1,79 @@
+// Header
+
+.header {
+  width: 100%;
+  background: var(--primary-color);
+
+  @include position (fixed, $t: 0, $l: 0, $z: z('fixed'));
+}
+
+
+
+// Nav
+
+.nav {
+  height: var(--header-height);
+  color: var(--white-color);
+
+  @include flex-center-between;
+
+  &__logo {
+    font-weight: var(--font-semi-bold);
+    text-transform: capitalize;
+  }
+
+  &__menu {
+    position: relative;
+    color: var(--text-light-color);
+  }
+
+  &__list {
+    @include flex-column;
+    row-gap: 2.5rem;
+  }
+
+  &__link {
+    text-transform: uppercase;
+    font-weight: var(--font-semi-bold);
+
+    &:hover {
+      color: var(--text-color);
+    }
+  }
+
+  &__open {
+    font-size: 1.2rem;
+    cursor: pointer;
+  }
+
+  &__close {
+    font-size: 1.5rem;
+    color: var(--title-color);
+    cursor: pointer;
+
+    @include position (absolute, $t: .75rem, $r: 1rem);
+  }
+}
+
+
+
+// Nav Media
+
+@include max-width (767px) {
+  .nav {
+    &__menu {
+      size: 70% 100%;
+      padding: 3rem;
+      background: var(--body-color);
+      box-shadow: -1px 0 4px hsla(var(--hue-color), 64%, 15%, .15);
+
+      transition: .4s;
+
+      @include position (fixed, $t: 0, $r: -100%);
+
+      &--show {
+        right: 0;
+      }
+    }
+  }
+}
