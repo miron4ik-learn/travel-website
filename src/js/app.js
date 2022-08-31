@@ -173,30 +173,30 @@ themeBtn.addEventListener('click', () => {
 
 // Scroll Reveal Animation
 
-// const sr = ScrollReveal({
-//   distance: '60px',
-//   duration: 2800,
-//   reset: true,
-// })
+const sr = ScrollReveal({
+  distance: '60px',
+  duration: 2800,
+  reset: true,
+})
 
-// sr.reveal(`.home__data, .home__social__link, .home__info,
-//           .discover__container,
-//           .experience__data, .experience__overlay,
-//           .place__card,
-//           .sponsor__content,
-//           .footer__data, .footer__rights`, {
-//   origin: 'top',
-//   interval: 100,
-// })
+sr.reveal(`.home__data, .home__social__link, .home__info,
+          .discover__container,
+          .experience__data, .experience__overlay,
+          .place__card,
+          .sponsor__content,
+          .footer__data, .footer__rights`, {
+  origin: 'top',
+  interval: 100,
+})
 
-// sr.reveal(`.about__data,
-//           .video__description,
-//           .subscribe__description`, {
-//   origin: 'left',
-// })
-// sr.reveal(`.about__img__overlay,
-//           .video__content,
-//           .subscribe__form`, {
-//   origin: 'right',
-//   interval: 100,
-// })
+sr.reveal(`.about__data,
+          .video__description,
+          .subscribe__description`, {
+  origin: 'left',
+})
+sr.reveal(`.about__img__overlay,
+          .video__content,
+          .subscribe__form`, {
+  origin: 'right',
+  interval: 100,
+})
