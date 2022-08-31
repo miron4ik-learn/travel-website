@@ -107,3 +107,31 @@ const scrollUp = () => {
 }
 
 window.addEventListener('scroll', () => scrollUp())
+
+
+
+// Scroll Active Link
+
+const sections = document.querySelectorAll('section[id]')
+const navLinkClassActive = 'nav__link--active'
+
+const scrollActive = () => {
+  const scrollY = window.scrollY;
+
+  sections.forEach(section => {
+    const sectionHeight = section.offsetHeight,
+          sectionTop    = section.offsetTop - 50,
+          sectionId     = section.getAttribute('id')
+
+    const navLink = document.querySelector(`.nav__link[href*=${sectionId}]`)
+
+    if(scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      navLink.classList.add(navLinkClassActive)
+    } else {
+      navLink.classList.remove(navLinkClassActive)
+    }
+  })
+}
+
+window.addEventListener('scroll', () => scrollActive())
+scrollActive()

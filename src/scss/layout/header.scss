@@ -45,6 +45,19 @@
     &:hover {
       color: var(--text-color);
     }
+
+    &--active {
+      position: relative;
+      color: var(--title-color);
+
+      @include pseudo-before {
+        size: 100% 2px;
+        background: var(--title-color);
+
+        bottom: -.75rem;
+        left: 0;
+      }
+    }
   }
 
   &__open {
