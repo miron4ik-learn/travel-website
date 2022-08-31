@@ -24,3 +24,20 @@ const linkAction = () => {
 
 const navLink = document.querySelectorAll('.nav__link')
 navLink.forEach(l => l.addEventListener('click', () => linkAction()))
+
+
+
+// Change Background Header
+
+const scrollHeader = () => {
+  const header = document.getElementById('header')
+  const headerClassScroll = 'header--scroll'
+
+  if(window.scrollY >= 200) {
+    header.classList.add(headerClassScroll)
+  } else {
+    header.classList.remove(headerClassScroll)
+  }
+}
+
+window.addEventListener('scroll', () => scrollHeader())

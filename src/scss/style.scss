@@ -86,4 +86,8 @@ html {
 // Reusuable CSS
 @import './reusuable';
 
-@import './layout/header'
+@import './elements/button';
+
+@import './layout/header';
+
+@import './include/home';

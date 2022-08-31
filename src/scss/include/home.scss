@@ -1,0 +1,75 @@
+// Home
+
+.home {
+  &__img {
+    size: 100% 100vh;
+    object-fit: cover;
+    object-position: 83%;
+
+    @include position (absolute, $t: 0, $l: 0);
+  }
+  
+  &__container {
+    position: relative;
+    height: calc(100vh - var(--header-height));
+    color: var(--white-color);
+
+    align-content: center;
+    row-gap: 3rem;
+  }
+
+  &__data {
+    &__subtitle {
+      display: block;
+      margin-bottom: var(--mb-0-75);
+      font-weight: var(--font-semi-bold);
+    }
+
+    &__title {
+      margin-bottom: var(--mb-2-5);
+      font-weight: var(--font-medium);
+      font-size: var(--biggest-font);
+      color: inherit;
+    }
+  }
+
+  &__social {
+    @include flex-column;
+    row-gap: 1.5rem;
+
+    &__link {
+      width: max-content;
+      font-size: 1.2rem;
+    }
+  }
+
+  &__info {
+    width: 228px;
+    padding: 1.5rem 1rem;
+    background: var(--primary-color);
+
+    @include position (absolute, $r: 0, $b: 1rem);
+
+    @include flex-center-ver;
+    column-gap: .5rem;
+
+    &__title {
+      display: block;
+      margin-bottom: var(--mb-0-75);
+      font-weight: var(--font-semi-bold);
+      font-size: var(--small-font);
+    }
+
+    &__btn {
+      font-size: var(--smaller-font);
+    }
+
+    &__overlay {
+      @include scale-img;
+    }
+
+    &__img {
+      width: 145px;
+    }
+  }
+}

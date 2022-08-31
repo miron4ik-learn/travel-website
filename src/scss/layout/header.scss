@@ -2,9 +2,16 @@
 
 .header {
   width: 100%;
-  background: var(--primary-color);
+  background: transparent;
+  color: var(--white-color);
 
   @include position (fixed, $t: 0, $l: 0, $z: z('fixed'));
+
+  &--scroll {
+    background: var(--body-color);
+    box-shadow: 0 0 4px hsla(var(--hue-color), 64%, 15%, .15);
+    color: var(--title-color);
+  }
 }
 
 
@@ -13,7 +20,6 @@
 
 .nav {
   height: var(--header-height);
-  color: var(--white-color);
 
   @include flex-center-between;
 
