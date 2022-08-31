@@ -1,0 +1,19 @@
+// Sponsor
+
+.sponsor {
+  &__container {
+    grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+    justify-items: center;
+    row-gap: 3.5rem;
+  }
+
+  &__img {
+    width: 90px;
+    filter: invert(.7);
+    transition: $img-transition;
+
+    &:hover {
+      filter: invert(.5);
+    }
+  }
+}
