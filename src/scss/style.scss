@@ -100,3 +100,20 @@ html {
 @import './include/discover';
 @import './include/subscribe';
 @import './include/experience';
+
+
+
+// Scroll Bar
+
+::-webkit-scrollbar {
+  width: .6rem;
+  background: var(--scroll-bar-color);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scroll-thumb-color);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-light-color);
+}
