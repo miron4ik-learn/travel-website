@@ -136,10 +136,10 @@
 }
 
 @include media-query ($from: 721px, $media-feature: height) {
-  .home {
-    &__container,
-    &__img {
-      height: 640px;
-    }
-  }
+  // .home {
+  //   &__container,
+  //   &__img {
+  //     height: 640px;
+  //   }
+  // }
 }
