@@ -60,3 +60,33 @@ const swiperDiscover = new Swiper('.discover__container', {
     rotate: 0,
   },
 })
+
+
+
+// Video
+
+const videoFile = document.getElementById('video-file'),
+      videoBtn  = document.getElementById('video-btn'),
+      videoIcon = document.getElementById('video-icon')
+
+const videoIcons = {
+  play: 'ri-play-line',
+  pause: 'ri-pause-line',
+}
+
+const playPause = () => {
+  if(videoFile.paused) {
+    videoFile.play()
+    videoIcon.classList.replace(videoIcons.play, videoIcons.pause)
+  } else {
+    videoFile.pause()
+    videoIcon.classList.replace(videoIcons.pause, videoIcons.play)
+  }
+}
+
+const finalVideo = () => {
+  videoIcon.classList.replace(videoIcons.pause, videoIcons.play)
+}
+
+videoBtn.addEventListener('click', () => playPause())
+videoFile.addEventListener('ended', () => finalVideo())
